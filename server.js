@@ -17,6 +17,9 @@ app.use(express.json())
 
 app.use(cors())
 
+app.get('/', (req, res) => {
+    res.json('hello')
+})
 
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 
@@ -35,7 +38,7 @@ const storeItems = new Map(items.map(obj => [obj.id, {name: obj.name, priceInCen
 // const formattedStoreItems = Object.fromEntries(storeItems)
 
 
-app.get('/store-items', (req, res) => {
+app.get('/store-items',  (req, res) => {
     res.send(items)
 })
 
