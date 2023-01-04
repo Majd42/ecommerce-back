@@ -66,8 +66,8 @@ app.post('/create-checkout-session', async  (req, res) => {
             }),
           
             mode: 'payment',
-            success_url: 'http://localhost:3000/',
-            cancel_url: 'http://localhost:3000/store/',
+            success_url: 'http://google.com/',
+            cancel_url: 'http://google.com/',
         })
         
       res.json(session.url)
