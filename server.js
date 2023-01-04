@@ -11,9 +11,11 @@ require('dotenv').config()
 
 const app = express();
 app.use(express.json())
-app.use(cors({
-    origin: 'https://shopinonline.netlify.app'
-}))
+// app.use(cors({
+//     origin: 'https://shopinonline.netlify.app'
+// }))
+
+app.use(cors())
 
 
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
